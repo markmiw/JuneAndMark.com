@@ -21,9 +21,9 @@ export default function PageLayout({ title, children }: Props) {
         position: "sticky",
         top: 0,
         zIndex: 20,
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "1fr auto 1fr",
         alignItems: "center",
-        justifyContent: "space-between",
         padding: "14px clamp(20px, 5vw, 48px)",
         background: "rgba(0,0,0,0.55)",
         backdropFilter: "blur(16px)",
@@ -37,7 +37,7 @@ export default function PageLayout({ title, children }: Props) {
         >
           {tr.back}
         </button>
-        <h1 className={script.className} style={{ color: "white", fontSize: "clamp(1.8rem, 4vw, 3rem)", lineHeight: 1, textShadow: "0 2px 12px rgba(0,0,0,0.8)", margin: 0, position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
+        <h1 className={script.className} style={{ color: "white", fontSize: "clamp(1.8rem, 4vw, 3rem)", lineHeight: 1, textShadow: "0 2px 12px rgba(0,0,0,0.8)", margin: 0, textAlign: "center", whiteSpace: "nowrap" }}>
           {title}
         </h1>
         <div style={{ width: 60 }} />
