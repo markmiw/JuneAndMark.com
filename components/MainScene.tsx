@@ -13,10 +13,9 @@ const MainScene: React.FC = () => {
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
-    vid.play().catch(() => {
-      const unlock = () => { vid.play().catch(() => {}); document.removeEventListener('touchstart', unlock); };
-      document.addEventListener('touchstart', unlock, { once: true });
-    });
+    vid.muted = true;  // fix React muted prop bug on iOS Chrome
+    vid.load();
+    vid.play().catch(() => {});
   }, []);
 
   const NAV_LINKS = [
