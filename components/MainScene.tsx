@@ -1,6 +1,6 @@
 
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Countdown from "./Countdown";
 import WeddingTitle from "./WeddingTitle";
@@ -10,13 +10,18 @@ const MainScene: React.FC = () => {
   const router = useRouter();
   const { tr } = useLocale();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [paused, setPaused] = useState(false);
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
-    vid.muted = true;  // fix React muted prop bug on iOS Chrome
+    vid.muted = true;
     vid.load();
-    vid.play().catch(() => {});
+    vid.play().catch(() => setPaused(true));
   }, []);
+  const handleTap = () => {
+    videoRef.current?.play().catch(() => {});
+    setPaused(false);
+  };
 
   const NAV_LINKS = [
     { label: tr.nav.gallery, path: "/gallery" },
