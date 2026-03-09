@@ -1,5 +1,6 @@
 
 "use client";
+import { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Countdown from "./Countdown";
 import WeddingTitle from "./WeddingTitle";
@@ -8,6 +9,8 @@ import { useLocale } from "./LocaleProvider";
 const MainScene: React.FC = () => {
   const router = useRouter();
   const { tr } = useLocale();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => { videoRef.current?.play().catch(() => {}); }, []);
 
   const NAV_LINKS = [
     { label: tr.nav.gallery, path: "/gallery" },

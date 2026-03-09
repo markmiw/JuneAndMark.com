@@ -1,5 +1,6 @@
 
 "use client";
+import { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Great_Vibes } from "next/font/google";
 import { useLocale } from "./LocaleProvider";
@@ -14,6 +15,8 @@ interface Props {
 export default function PageLayout({ title, children }: Props) {
   const router = useRouter();
   const { tr } = useLocale();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => { videoRef.current?.play().catch(() => {}); }, []);
 
   return (
     <div style={{ position: "relative", width: "100%", minHeight: "100dvh", background: "#000" }}>
