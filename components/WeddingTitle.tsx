@@ -32,6 +32,9 @@ export default function WeddingTitle() {
         {tr.weddingWord}
         <span style={{ color: "#f4a0b8", fontSize: "0.45em", lineHeight: 1 }}>&#9825;</span>
       </div>
+      <div style={{ fontSize: "clamp(0.85rem, 1.8vw, 1.4rem)", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "0.5em", color: "rgba(255,255,255,0.85)", textShadow: titleShadow, fontFamily: "Georgia, serif" }}>
+        {tr.dateLabel}
+      </div>
     </div>
   );
 }

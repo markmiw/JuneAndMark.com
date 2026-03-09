@@ -4,6 +4,7 @@ export type Locale = 'en' | 'ko';
 export const t = {
   en: {
     weddingWord: 'Wedding',
+    dateLabel: 'September 26th, 2026',
     days: 'days', hrs: 'hrs', mins: 'mins', secs: 'secs',
     nav: { gallery: 'Gallery', rsvp: 'RSVP', info: 'Wedding Info' },
     back: '← Back',
@@ -31,6 +32,7 @@ export const t = {
   },
   ko: {
     weddingWord: '결혼식',
+    dateLabel: '2026년 9월 26일',
     days: '일', hrs: '시간', mins: '분', secs: '초',
     nav: { gallery: '걤러리', rsvp: '참석 확인', info: '웨딩 정보' },
     back: '← 뒤로',

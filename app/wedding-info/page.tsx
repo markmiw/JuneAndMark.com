@@ -48,7 +48,7 @@ export default function WeddingInfoPage() {
 
         <div style={card}>
           <p style={sectionTitle}>After Party</p>
-          <p style={{ ...body, color: "rgba(255,255,255,0.55)", fontStyle: "italic" }}>
+          <p style={{ ...body, color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>
             Details coming soon &mdash; stay tuned!
           </p>
         </div>
