@@ -10,7 +10,14 @@ const MainScene: React.FC = () => {
   const router = useRouter();
   const { tr } = useLocale();
   const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => { videoRef.current?.play().catch(() => {}); }, []);
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    vid.play().catch(() => {
+      const unlock = () => { vid.play().catch(() => {}); document.removeEventListener('touchstart', unlock); };
+      document.addEventListener('touchstart', unlock, { once: true });
+    });
+  }, []);
 
   const NAV_LINKS = [
     { label: tr.nav.gallery, path: "/gallery" },
