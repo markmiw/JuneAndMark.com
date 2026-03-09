@@ -73,7 +73,7 @@ const MainScene: React.FC = () => {
         <div className="fade-in-up delay-3">
           <Countdown />
         </div>
-        <nav style={{ display: "flex", gap: "clamp(20px, 5vw, 64px)" }}>
+        <nav style={{ display: "flex", gap: "clamp(32px, 8vw, 100px)" }}>
           {NAV_LINKS.map(({ label, path }) => (
             <button key={path} className="nav-link fade-in-up delay-4" onClick={() => router.push(path)}>
               {label}
