@@ -1,70 +1,20 @@
 import Image from "next/image";
+import { readdirSync } from "fs";
+import { join } from "path";
 import PageLayout from "@/components/PageLayout";
 
 export default function GalleryPage() {
+  const photos = readdirSync(join(process.cwd(), "public"))
+    .filter((f) => /.(jpg|jpeg|png|webp)$/i.test(f));
+
   return (
     <PageLayout title="Gallery">
       <div style={{ columns: "2 180px", gap: 10 }}>
-          <div key="6fa9cf33-8ddb-475f-a08c-53285b2934d3.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/6fa9cf33-8ddb-475f-a08c-53285b2934d3.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+        {photos.map((src) => (
+          <div key={src} style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src={`/${src}`} alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
-          <div key="IMG_0396.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_0396.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_1433.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_1433.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_1545.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_1545.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_1597.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_1597.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_1635.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_1635.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_1842.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_1842.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_1948.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_1948.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_2357.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_2357.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_3203.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_3203.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_3987.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_3987.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_4111.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_4111.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_4223.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_4223.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_4640.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_4640.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_4711.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_4711.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_6331.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_6331.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_6642.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_6642.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_6650.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_6650.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_9113.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_9113.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
-          <div key="IMG_9594.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
-            <Image src="/IMG_9594.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
-          </div>
+        ))}
       </div>
     </PageLayout>
   );
