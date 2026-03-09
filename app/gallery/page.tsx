@@ -11,6 +11,24 @@ export default function GalleryPage() {
           <div key="IMG_0396.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
             <Image src="/IMG_0396.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
+          <div key="IMG_1433.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_1433.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div key="IMG_1545.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_1545.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div key="IMG_1597.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_1597.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div key="IMG_1635.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_1635.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div key="IMG_1842.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_1842.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div key="IMG_1948.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_1948.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
           <div key="IMG_2357.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
             <Image src="/IMG_2357.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
@@ -40,6 +58,9 @@ export default function GalleryPage() {
           </div>
           <div key="IMG_6650.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
             <Image src="/IMG_6650.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div key="IMG_9113.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+            <Image src="/IMG_9113.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
           <div key="IMG_9594.jpg" style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
             <Image src="/IMG_9594.jpg" alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
