@@ -1,4 +1,6 @@
+"use client";
 import PageLayout from "@/components/PageLayout";
+import { useLocale } from "@/components/LocaleProvider";
 
 const sectionTitle: React.CSSProperties = {
   color: "white",
@@ -30,26 +32,28 @@ const card: React.CSSProperties = {
 };
 
 export default function WeddingInfoPage() {
+  const { tr } = useLocale();
+
   return (
-    <PageLayout title="Wedding Info">
+    <PageLayout title={tr.infoTitle}>
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
 
         <div style={card}>
-          <p style={sectionTitle}>Date &amp; Time</p>
-          <p style={body}>Saturday, September 26th, 2026</p>
-          <p style={body}>Ceremony begins at 4:00 PM &middot; Ends at 9:00 PM</p>
+          <p style={sectionTitle}>{tr.dateTime.label}</p>
+          <p style={body}>{tr.dateTime.date}</p>
+          <p style={body}>{tr.dateTime.time}</p>
         </div>
 
         <div style={card}>
-          <p style={sectionTitle}>Venue</p>
-          <p style={body}>The Plant Place</p>
-          <p style={body}>41-821 Waikupanaha St, Waimanalo, HI 96795</p>
+          <p style={sectionTitle}>{tr.venue.label}</p>
+          <p style={body}>{tr.venue.name}</p>
+          <p style={body}>{tr.venue.address}</p>
         </div>
 
         <div style={card}>
-          <p style={sectionTitle}>After Party</p>
-          <p style={{ ...body, color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>
-            Details coming soon &mdash; stay tuned!
+          <p style={sectionTitle}>{tr.accommodations.label}</p>
+          <p style={{ ...body, fontStyle: "italic" }}>
+            {tr.accommodations.body}
           </p>
         </div>
 

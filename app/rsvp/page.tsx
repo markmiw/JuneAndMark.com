@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
+import { useLocale } from "@/components/LocaleProvider";
 
 // ── Paste your Apps Script deployment URL here after setup ──────────
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbySL_lqsl1wmvykjJ_okamW2bjRcnMnfn4Bw-4HVL4HagOQNqJSafz-dMVHHHKKbLJ6/exec";
@@ -27,6 +28,7 @@ const labelStyle: React.CSSProperties = {
 };
 
 export default function RsvpPage() {
+  const { tr } = useLocale();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -62,7 +64,7 @@ export default function RsvpPage() {
       });
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again or contact us directly.");
+      setError(tr.rsvp.error);
     } finally {
       setLoading(false);
     }
@@ -70,16 +72,14 @@ export default function RsvpPage() {
 
   if (submitted) {
     return (
-      <PageLayout title="RSVP">
+      <PageLayout title={tr.rsvpTitle}>
         <div style={{ textAlign: "center", color: "#1a1a1a", fontFamily: "Georgia, serif", marginTop: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 16 }}>🎉</div>
           <p style={{ fontSize: 22, fontStyle: "italic", marginBottom: 8 }}>
-            {attending === "yes"
-              ? "We can't wait to celebrate with you!"
-              : "We'll miss you — thanks for letting us know."}
+            {attending === "yes" ? tr.rsvp.successYes : tr.rsvp.successNo}
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)" }}>
-            A confirmation has been noted. See you soon!
+            {tr.rsvp.successSub}
           </p>
         </div>
       </PageLayout>
@@ -87,13 +87,13 @@ export default function RsvpPage() {
   }
 
   return (
-    <PageLayout title="RSVP">
+    <PageLayout title={tr.rsvpTitle}>
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
 
         {/* Name */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
           <div>
-            <label style={labelStyle}>First Name</label>
+            <label style={labelStyle}>{tr.rsvp.firstName}</label>
             <input
               style={inputStyle}
               placeholder="June"
@@ -103,7 +103,7 @@ export default function RsvpPage() {
             />
           </div>
           <div>
-            <label style={labelStyle}>Last Name</label>
+            <label style={labelStyle}>{tr.rsvp.lastName}</label>
             <input
               style={inputStyle}
               placeholder="Kim-Miw"
@@ -116,7 +116,7 @@ export default function RsvpPage() {
 
         {/* Email */}
         <div>
-          <label style={labelStyle}>Email</label>
+          <label style={labelStyle}>{tr.rsvp.email}</label>
           <input
             style={inputStyle}
             type="email"
@@ -129,7 +129,7 @@ export default function RsvpPage() {
 
         {/* Attending */}
         <div>
-          <label style={labelStyle}>Will you be attending?</label>
+          <label style={labelStyle}>{tr.rsvp.attending}</label>
           <div style={{ display: "flex", gap: 12 }}>
             {(["yes", "no"] as const).map((val) => (
               <button
@@ -149,7 +149,7 @@ export default function RsvpPage() {
                   transition: "background 0.2s, color 0.2s",
                 }}
               >
-                {val === "yes" ? "Yes" : "No"}
+                {val === "yes" ? tr.rsvp.yes : tr.rsvp.no}
               </button>
             ))}
           </div>
@@ -158,7 +158,7 @@ export default function RsvpPage() {
         {/* Guest count */}
         {attending === "yes" && (
           <div>
-            <label style={labelStyle}>Number of guests (including yourself)</label>
+            <label style={labelStyle}>{tr.rsvp.guestCount}</label>
             <select
               style={{ ...inputStyle, cursor: "pointer" }}
               value={guests}
@@ -173,10 +173,10 @@ export default function RsvpPage() {
 
         {/* Dietary */}
         <div>
-          <label style={labelStyle}>Dietary restrictions or allergies</label>
+          <label style={labelStyle}>{tr.rsvp.dietary}</label>
           <input
             style={inputStyle}
-            placeholder="None, vegetarian, gluten-free…"
+            placeholder={tr.rsvp.dietaryPlaceholder}
             value={dietary}
             onChange={(e) => setDietary(e.target.value)}
           />
@@ -184,10 +184,10 @@ export default function RsvpPage() {
 
         {/* Message */}
         <div>
-          <label style={labelStyle}>Message for the couple (optional)</label>
+          <label style={labelStyle}>{tr.rsvp.message}</label>
           <textarea
             style={{ ...inputStyle, minHeight: 90, resize: "vertical" }}
-            placeholder="We're so excited!"
+            placeholder={tr.rsvp.messagePlaceholder}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -218,7 +218,7 @@ export default function RsvpPage() {
             transition: "background 0.2s",
           }}
         >
-          {loading ? "Sending…" : "Send RSVP"}
+          {loading ? tr.rsvp.sending : tr.rsvp.send}
         </button>
 
       </form>
