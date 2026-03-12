@@ -31,7 +31,7 @@ export const t = {
     },
   },
   ko: {
-    weddingWord: '결혼식',
+    weddingWord: 'Wedding',
     dateLabel: '2026년 9월 26일',
     days: '일', hrs: '시간', mins: '분', secs: '초',
     nav: { gallery: 'Gallery', rsvp: 'RSVP', info: 'Wedding Info' },
