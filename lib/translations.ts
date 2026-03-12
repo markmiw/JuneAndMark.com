@@ -45,7 +45,7 @@ export const t = {
     rsvp: {
       firstName: '이름', lastName: '성', email: '이메일',
       attending: '참석하실 건가요?',
-      yes: '기쁜게 참석합니다 ✓', no: '아쉬게도 불참합니다',
+      yes: '참석합니다 ✓', no: '참석 못 해요',
       guestCount: '참석 인원 (본인 포함)',
       dietary: '식이 제한이나 알레르기가 있으신가요?',
       dietaryPlaceholder: '없음, 채식주의, 글루텐 프리…',
