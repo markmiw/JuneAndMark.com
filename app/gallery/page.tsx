@@ -32,7 +32,6 @@ const PHOTOS = [
   "8206321B-4E99-44FB-9BF8-01E408EC91B7_1_105_c.jpeg",  // 2024-10-09
   "345B8ACF-AA60-4100-948D-D4F3E26CBBE9_1_105_c.jpeg",  // 2024-10-09
   "867D8C8C-7470-4051-AD39-6EF52CC76F47_1_105_c.jpeg",  // 2024-10-10
-  "194370B5-AF13-475F-B304-3F413EE770FE_1_105_c.jpeg",  // no EXIF date
 ];
 
 export default function GalleryPage() {
@@ -40,8 +39,8 @@ export default function GalleryPage() {
     <PageLayout title="Gallery">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         {PHOTOS.map((src) => (
-          <div key={src} style={{ borderRadius: 8, overflow: "hidden" }}>
-            <Image src={`/${src}`} alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
+          <div key={src} style={{ borderRadius: 8, overflow: "hidden", position: "relative", aspectRatio: "1 / 1" }}>
+            <Image src={`/${src}`} alt="June and Mark" fill style={{ objectFit: "cover" }} />
           </div>
         ))}
       </div>
