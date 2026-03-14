@@ -13,9 +13,9 @@ export default function GalleryPage() {
 
   return (
     <PageLayout title="Gallery">
-      <div style={{ columns: "2 180px", gap: 10 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         {photos.map((src) => (
-          <div key={src} style={{ breakInside: "avoid", marginBottom: 10, borderRadius: 8, overflow: "hidden" }}>
+          <div key={src} style={{ borderRadius: 8, overflow: "hidden" }}>
             <Image src={`/${src}`} alt="June and Mark" width={600} height={800} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
         ))}
