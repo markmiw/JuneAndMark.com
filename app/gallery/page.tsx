@@ -1,5 +1,5 @@
-import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
+import GalleryLightbox from "@/components/GalleryLightbox";
 
 // Sorted by EXIF DateTimeOriginal (when photo was actually taken), ascending
 const PHOTOS = [
@@ -37,13 +37,7 @@ const PHOTOS = [
 export default function GalleryPage() {
   return (
     <PageLayout title="Gallery">
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-        {PHOTOS.map((src) => (
-          <div key={src} style={{ borderRadius: 8, overflow: "hidden", position: "relative", aspectRatio: "1 / 1" }}>
-            <Image src={`/${src}`} alt="June and Mark" fill style={{ objectFit: "cover" }} />
-          </div>
-        ))}
-      </div>
+      <GalleryLightbox photos={PHOTOS} />
     </PageLayout>
   );
 }
