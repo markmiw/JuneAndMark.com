@@ -27,14 +27,14 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
 
   return (
     <>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+      <div className="gallery-grid">
         {photos.map((src, i) => (
           <div
             key={src}
             onClick={() => setIndex(i)}
-            style={{ borderRadius: 8, overflow: "hidden", position: "relative", aspectRatio: "1 / 1", cursor: "pointer" }}
+            style={{ borderRadius: 8, overflow: "hidden", cursor: "pointer" }}
           >
-            <Image src={`/${src}`} alt="June and Mark" fill style={{ objectFit: "cover" }} />
+            <Image src={`/${src}`} alt="June and Mark" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
         ))}
       </div>

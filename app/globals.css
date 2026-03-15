@@ -64,6 +64,18 @@ body {
   animation: glow-pulse 4s ease-in-out infinite;
 }
 
+/* ─── Gallery grid ───────────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* ─── Nav text links ─────────────────────────────────────────────── */
 .nav-link {
   background: none;
