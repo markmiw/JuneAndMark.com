@@ -31,6 +31,7 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
         {photos.map((src, i) => (
           <div
             key={src}
+            className="gallery-item"
             onClick={() => setIndex(i)}
             style={{ borderRadius: 8, overflow: "hidden", cursor: "pointer" }}
           >
